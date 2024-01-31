@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Arreglo de prueba
+        var inicio = ["unacadena", 3, 9, 1, 10, 500, 1, 10, true];
+
+        // Filtrar solo los números del arreglo de inicio
+        var numeros = inicio.filter(function (element) {
+            return typeof element === 'number';
+        });
+
+        // Implementar un algoritmo de ordenación (burbuja)
+        function ordenarNumeros(arr) {
+            var len = arr.length;
+            
+            for (var i = 0; i < len - 1; i++) {
+                for (var j = 0; j < len - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        // Intercambiar elementos si están en el orden incorrecto
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            
+            return arr;
+        }
+
+        // Ordenar los números
+        var numerosOrdenados = ordenarNumeros(numeros);
+
+        // Imprimir los números ordenados en consola
+        console.log("Números Ordenados:", numerosOrdenados);
+    </script>
+</body>
+</html>
